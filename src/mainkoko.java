@@ -8,7 +8,6 @@ public class mainkoko extends Thread {
         System.out.println("These are the wallet networks available, What would you like to do? ");
         System.out.println("[1]YingWallet (YRC) \n[2]YangWallet (Yp2) \n[3]Leave platform");
         int opt = sc.nextInt();
-        System.out.println(opt);
         switch (opt){
             case 1:
                 YingWallet();
@@ -54,12 +53,12 @@ public class mainkoko extends Thread {
         System.out.println("[1]Deposit \n [2]Withdraw \n [3]Exit");
         int action = sc.nextInt();
         if(action == 1){
-            YingWallet bill = new YingWallet(null);
-            bill.topUp(BigDecimal.valueOf(23));
+            YingWallet bill = new YingWallet(BigDecimal.ZERO);
+            bill.topUp(BigDecimal.valueOf(2));
         }
         else if(action == 2){
-            YingWallet bill = new YingWallet(null);
-            bill.topUp(BigDecimal.valueOf(40));
+            YingWallet bill = new YingWallet(BigDecimal.ZERO);
+            bill.withdraw(BigDecimal.valueOf(5));
         }
         else if(action == 3){
             System.exit(0);
